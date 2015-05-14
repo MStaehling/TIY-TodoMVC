@@ -20,22 +20,26 @@
             if ( event.keyCode === 13 ){
                 var task = document.querySelector('input.new-todo').value;
                 todos.taskList.push(task);
-
+console.log(todos.taskList.length)
 							  document.querySelector('input.new-todo').value= "";
 
+								if (todos.taskList.length === 1) {
+									(document.querySelector('span.todo-count').textContent = (todos.taskList.length + " Item Left"));
+								} else {
+									(document.querySelector('span.todo-count').textContent = (todos.taskList.length + " Items Left"));
+								};
+
+// working on tomorrow
+								document.querySelector('ul.todo-list > li').textContent = task;
+
+
+
+							//	todos.taskList.length =	document.querySelector('.todo-count') ;
+//console.log(document.querySelector('.todo-count'));
 
                 console.log(todos.taskList);
                 }
             // TO ADD A NEW TASK:
-            // GIVEN an HTML element <input class="new-todo">
-            // WHEN the user types a task AND presses the "Enter" key
-            // THEN
-            // 1. Click on "What needs to be done?" (input.new-todo)
-            // 2. Type the thing you want to remember (task!).
-            // 3. Press the "Enter" key
-            // 4. ROBOT: Save the thing to remember (task) to the list of things to remember (taskList)
-            // 5. ROBOT: Remove the thing to remember (task) from the "What needs to be done?" box (input.new-todo)
-            // 6. ROBOT: Update the number of tasks in the footer....
             // 7. ROBOT: Add a new task (ul.todo-list > li) to the list of tasks _in the display_ (ul.todo-list)
         });
 })(window);
