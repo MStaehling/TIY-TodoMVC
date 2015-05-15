@@ -41,27 +41,39 @@ console.log(todos.taskList.length)
                 }
             // TO ADD A NEW TASK:
             // 7. ROBOT: Add a new task (ul.todo-list > li) to the list of tasks _in the display_ (ul.todo-list)
-        });
+
+					});
+						//DELETE A TASK: CONTROLLER
+						// 1. What event should I be listening for? mouseover, click
+						// 2. What element makes sense to listen for that event? input.new-todo? ul.todo-list
+						// 3. What do I need to do when that event fires?
+						var deleteTask = document.querySelector('ul.todo-list')
+
+						deleteTask.addEventListener('mouseover', function(){
+							console.log("hello");
+						})
+
+
+
+						//EDIT A TASK
+						// 1. What event should I be listening for? dblclick, keyup
+						// 2. What element makes sense to listen for that event?
+						// 3. What do I need to do when that event fires?
+
+
+
+
+						//COMPLETE A TASK
+						// 1. What event should I be listening for? mouseover, click
+						// 2. What element makes sense to listen for that event? .completed or .view
+						// 3. What do I need to do when that event fires?
+
+
+						//VIEW A TASK
+						// 1. What event should I be listening for?
+						// 2. What element makes sense to listen for that event?
+						// 3. What do I need to do when that event fires?
+
+
+
 })(window);
-
-
-//DELETE A TASK
-// 1. What event should I be listening for? click
-// 2. What element makes sense to listen for that event? input.new-todo?
-// 3. What do I need to do when that event fires?
-
-
-
-
-//EDIT A TASK
-// 1. What event should I be listening for? dblclick, keyup
-// 2. What element makes sense to listen for that event?
-// 3. What do I need to do when that event fires?
-
-
-
-
-//COMPLETE A TASK
-// 1. What event should I be listening for? click
-// 2. What element makes sense to listen for that event? .completed or .view
-// 3. What do I need to do when that event fires?
