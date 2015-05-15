@@ -51,9 +51,9 @@ console.log(todos.taskList.length)
 
 						var deleteTaskButtons = document.querySelectorAll('button.destroy');
 
-						deleteTask.addEventListener('mouseover', function(){
-							console.log("hello");
-						});
+						// deleteTask.addEventListener('mouseover', function(){
+						// 	console.log("hello");
+						// });
 
 
 
