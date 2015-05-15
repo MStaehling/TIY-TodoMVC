@@ -55,7 +55,7 @@ console.log(todos.taskList.length)
 
 //EDIT A TASK
 // 1. What event should I be listening for? dblclick, keyup
-// 2. What element makes sense to listen for that event? 
+// 2. What element makes sense to listen for that event?
 // 3. What do I need to do when that event fires?
 
 
