@@ -17,36 +17,45 @@
 
       // newTodoInput.addEventListener('keyup', function() { console.log(arguments); });
         newTodoInput.addEventListener('keyup', function addTodoController(event){
-            if ( event.keyCode === 13 ){
-                var task = document.querySelector('input.new-todo').value;
-                todos.taskList.push(task);
-console.log(todos.taskList.length)
-							  document.querySelector('input.new-todo').value= "";
+            if ( event.keyCode !== 13 )return;//didn't press the "Enter" key!
+                var task = newTodoInput.value;
+                todos.addTask(task, todos.taskList);
+//console.log(todos.taskList.length)
 
+
+
+								newTodoInput.value = "";
+							{//FIXME refractor into function...
+								var todoCountText = todos.taskList.length + ' Item';
 								if (todos.taskList.length === 1) {
-									(document.querySelector('span.todo-count').textContent = (todos.taskList.length + " Item Left"));
+								//todoCountText = todoCountText + ' Left';
+								todoCountText += ' Left';
 								} else {
-									(document.querySelector('span.todo-count').textContent = (todos.taskList.length + " Items Left"));
+									//todoCountText = TodoCountText + 's Items';
+									todoCountText += 's Left';
 								};
-
-// working on tomorrow
-								document.querySelector('ul.todo-list > li').textContent = task;
-
+							}
+							//todoCountElement.text = todoCountText;
 
 
-							//	todos.taskList.length =	document.querySelector('.todo-count') ;
-//console.log(document.querySelector('.todo-count'));
+						//TODO Add a <li> representtation of 'task'...
+						document.querySelector('ul.todo-list').innerHTML += (
+							"<li><div><input.toggle><label>" + task + "</label></input.toggle></div></li>"
+						)
 
-                console.log(todos.taskList);
-                }
+					    console.log(todos.taskList);
+
             // TO ADD A NEW TASK:
             // 7. ROBOT: Add a new task (ul.todo-list > li) to the list of tasks _in the display_ (ul.todo-list)
 
 					});
 						//DELETE A TASK: CONTROLLER
 						// 1. What event should I be listening for? mouseover, click
-						// 2. What element makes sense to listen for that event? button.destroy? ul.todo-list
+						// 2. What element makes sense to listen for that event? li....button.destroy? ul.todo-list
 						// 3. What do I need to do when that event fires?
+							// 1. Remove from where it's saved
+							// 2. Delete task field on the display
+							// 3. update task # or remove it if 0
 						var deleteTask = document.querySelector('ul.todo-list');
 
 						var deleteTaskButtons = document.querySelectorAll('button.destroy');
@@ -55,13 +64,11 @@ console.log(todos.taskList.length)
 						// 	console.log("hello");
 						// });
 
-
-
-
 						_.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons){
 							element.addEventListener('click', function (){
 							console.log("works");
 						});
+
 					});
 
 
