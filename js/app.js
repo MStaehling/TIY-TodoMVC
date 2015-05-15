@@ -43,3 +43,25 @@ console.log(todos.taskList.length)
             // 7. ROBOT: Add a new task (ul.todo-list > li) to the list of tasks _in the display_ (ul.todo-list)
         });
 })(window);
+
+
+//DELETE A TASK
+// 1. What event should I be listening for? click
+// 2. What element makes sense to listen for that event? input.new-todo?
+// 3. What do I need to do when that event fires?
+
+
+
+
+//EDIT A TASK
+// 1. What event should I be listening for? dblclick, keyup
+// 2. What element makes sense to listen for that event? 
+// 3. What do I need to do when that event fires?
+
+
+
+
+//COMPLETE A TASK
+// 1. What event should I be listening for? click
+// 2. What element makes sense to listen for that event? .completed or .view
+// 3. What do I need to do when that event fires?
