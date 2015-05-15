@@ -45,7 +45,7 @@ console.log(todos.taskList.length)
 					});
 						//DELETE A TASK: CONTROLLER
 						// 1. What event should I be listening for? mouseover, click
-						// 2. What element makes sense to listen for that event? input.new-todo? ul.todo-list
+						// 2. What element makes sense to listen for that event? button.destroy? ul.todo-list
 						// 3. What do I need to do when that event fires?
 						var deleteTask = document.querySelector('ul.todo-list');
 
@@ -67,9 +67,18 @@ console.log(todos.taskList.length)
 
 
 						//EDIT A TASK
-						// 1. What event should I be listening for? dblclick, keyup
-						// 2. What element makes sense to listen for that event?
+						// 1. What event should I be listening for? dblclick, keyup [enter 13, tab, excape 27]
+						// 2. What element makes sense to listen for that event? ul.todo-list
 						// 3. What do I need to do when that event fires?
+
+						var editTask = document.querySelectorAll('li');
+
+						_.forEach(editTask, function (element, index, editTask){
+							element.addEventListener('dblclick', function(){
+								console.log("Happy, Happy, Joy, Joy!!")
+							})
+						})
+
 
 
 
