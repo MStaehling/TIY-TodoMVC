@@ -47,9 +47,9 @@ console.log(todos.taskList.length)
 						// 1. What event should I be listening for? mouseover, click
 						// 2. What element makes sense to listen for that event? input.new-todo? ul.todo-list
 						// 3. What do I need to do when that event fires?
-						var deleteTask = document.querySelector('ul.todo-list')
+						var deleteTask = document.querySelector('ul.todo-list');
 
-						var deleteTaskButton = document.querySelector('button.destroy')
+						var deleteTaskButtons = document.querySelectorAll('button.destroy');
 
 						deleteTask.addEventListener('mouseover', function(){
 							console.log("hello");
@@ -58,9 +58,11 @@ console.log(todos.taskList.length)
 
 
 
-						deleteTaskButton.addEventListener('click', function(){
+						_.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons){
+							element.addEventListener('click', function (){
 							console.log("works");
-						})
+						});
+					});
 
 
 
