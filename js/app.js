@@ -49,8 +49,17 @@ console.log(todos.taskList.length)
 						// 3. What do I need to do when that event fires?
 						var deleteTask = document.querySelector('ul.todo-list')
 
+						var deleteTaskButton = document.querySelector('button.destroy')
+
 						deleteTask.addEventListener('mouseover', function(){
 							console.log("hello");
+						});
+
+
+
+
+						deleteTaskButton.addEventListener('click', function(){
+							console.log("works");
 						})
 
 
