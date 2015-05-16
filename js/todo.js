@@ -12,11 +12,22 @@
      return list.splice(position, 1);
    }
 
+   function footerCount(element){
+       if ( taskList.length === 1 ) {
+         element.textContent = taskList.length + " Item Left";
+       } else {
+         element.textContent = taskList.length + " Items Left";
+       }
+   }
+
+
+
    window.todos = {
      "taskList": taskList,
      "addTask": addTask,
-     // "completeTask": completeTask,
-     "deleteTask": deleteTask
+     //"completeTask": completeTask,
+     "deleteTask": deleteTask,
+     "footerCount": footerCount
    };
 
 })(window);

@@ -14,34 +14,37 @@
   // 7. ROBOT: Add a new task (ul.todo-list > li) to the list of tasks _in the display_ (ul.todo-list)
 
   var newTodoInput = document.querySelector('input.new-todo');
-
+  var todoCount = document.querySelector('span.todo-count');
   // newTodoInput.addEventListener('keyup', function() { console.log(arguments); });
   newTodoInput.addEventListener('keyup', function addTodoController(event) {
-    if (event.keyCode !== 13) return; //didn't press the "Enter" key!
-    var task = newTodoInput.value,
-      todoCountElement = document.querySelector('span.todo-count');
+    if (event.keyCode !== 13 || newTodoInput.value === "") return; //didn't press the "Enter" key!
+    var task = newTodoInput.value;
+      //todoCountElement = document.querySelector('span.todo-count');
     todos.addTask(task, todos.taskList);
     //console.log(todos.taskList.length)
 
 
-
-    newTodoInput.value = ""; { //FIXME refractor into function...
-      var todoCountText = todos.taskList.length + ' Item';
-      if (todos.taskList.length === 1) {
-        //todoCountText = todoCountText + ' Left';
-        todoCountText += ' Left';
-      } else {
-        //todoCountText = TodoCountText + 's Left';
-        todoCountText += 's Left';
-      };
-    }
+    todos.footerCount(todoCount);
+    newTodoInput.value = "";  //FIXME refractor into function...
+    //   var todoCountText = todos.taskList.length + ' Item';
+    //   if (todos.taskList.length === 1) {
+    //     //todoCountText = todoCountText + ' Left';
+    //     todoCountText += ' Left';
+    //   } else {
+    //     //todoCountText = TodoCountText + 's Left';
+    //     todoCountText += 's Left';
+    //   };
+    // }
     //todoCountElement.text = todoCountText;
+
+
+
 
 
     //TODO Add a <li> representtation of 'task'...
 
     document.querySelector('ul.todo-list').innerHTML += (
-      "<li><div><input class='toggle' type='checkbox'><label>" + task + "</label><button class='destroy'></button></input class='toggle' type='checkbox'></div></li>"
+      "<li><div><input class='toggle' type='checkbox'><label>" + task + "</label><button class='destroy'x></button></input class='toggle' type='checkbox'></div></li>"
     )
 
     console.log(todos.taskList);
