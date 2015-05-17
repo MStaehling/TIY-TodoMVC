@@ -19,13 +19,13 @@
   newTodoInput.addEventListener('keyup', function addTodoController(event) {
     if (event.keyCode !== 13 || newTodoInput.value === "") return; //didn't press the "Enter" key!
     var task = newTodoInput.value;
-      //todoCountElement = document.querySelector('span.todo-count');
+    //todoCountElement = document.querySelector('span.todo-count');
     todos.addTask(task, todos.taskList);
     //console.log(todos.taskList.length)
 
 
     todos.footerCount(todoCount);
-    newTodoInput.value = "";  //FIXME refractor into function...
+    newTodoInput.value = ""; //FIXME refractor into function...
     //   var todoCountText = todos.taskList.length + ' Item';
     //   if (todos.taskList.length === 1) {
     //     //todoCountText = todoCountText + ' Left';
@@ -60,6 +60,7 @@
   // 1. Remove from where it's saved
   // 2. Delete task field on the display
   // 3. update task # or remove it if 0
+  // 4. click will tell what Index position of the array
   var deleteTask = document.querySelector('ul.todo-list');
 
   var deleteTaskButtons = document.querySelectorAll('button.destroy');
@@ -68,8 +69,13 @@
   // 	console.log("hello");
   // });
 
+
+// Potentially something to delete a task
   _.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons) {
     element.addEventListener('click', function() {
+      var listItem = document.getElementById('ul.todo-list');
+      todos.deleteTask(listItem.index('ul.todo-list'), todos.taskList)
+
       console.log("works");
     });
 
