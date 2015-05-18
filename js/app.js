@@ -63,23 +63,33 @@
   // 4. click will tell what Index position of the array
   var deleteTask = document.querySelector('ul.todo-list');
 
-  var deleteTaskButtons = document.querySelectorAll('button.destroy');
+  var deleteTaskButtons = document.querySelector('button.destroy');
 
   // deleteTask.addEventListener('mouseover', function(){
   // 	console.log("hello");
   // });
 
 
-// Potentially something to delete a task
-  _.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons) {
-    element.addEventListener('click', function() {
-      var listItem = document.getElementById('ul.todo-list');
-      todos.deleteTask(listItem.index('ul.todo-list'), todos.taskList)
 
-      console.log("works");
-    });
 
-  });
+  // deleteTaskButtons.addEventListener('click', function deleteTaskController(event){
+  //
+  //   console.log("sup")
+  // })
+
+
+
+
+//  Potentially something to delete a task
+  // _.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons) {
+  //   element.addEventListener('click', function() {
+  //     var listItem = document.getElementsByClassName('destroy');
+  //     todos.deleteTask(listItem.index('ul.todo-list'), todos.taskList)
+  //
+  //     console.log("works");
+  //   });
+  //
+  // });
 
 
 
