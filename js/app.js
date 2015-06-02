@@ -26,6 +26,8 @@
 
     todos.footerCount(todoCount);
     newTodoInput.value = ""; //FIXME refractor into function...
+    //newTodoInput.reset
+
     //   var todoCountText = todos.taskList.length + ' Item';
     //   if (todos.taskList.length === 1) {
     //     //todoCountText = todoCountText + ' Left';
@@ -44,9 +46,11 @@
     //TODO Add a <li> representtation of 'task'...
 
     document.querySelector('ul.todo-list').innerHTML += (
-      "<li><div><input class='toggle' type='checkbox'><label>" + task + "</label><button class='destroy'x></button></input class='toggle' type='checkbox'></div></li>"
-    )
-
+        "<li><div><input class='toggle' type='checkbox'><label>" + task + "</label><button class='destroy'x></button></input class='toggle' type='checkbox'></div></li>"
+      )
+      // var list = document.querySelector('ul.todo-list');
+      //list.innerHTML += ('blah ablah blah');
+      //list.innerHTML = list.innerHTML + "blah blah blah";
     console.log(todos.taskList);
 
     // TO ADD A NEW TASK:
@@ -61,9 +65,10 @@
   // 2. Delete task field on the display
   // 3. update task # or remove it if 0
   // 4. click will tell what Index position of the array
-  var deleteTask = document.querySelector('ul.todo-list');
+  var list = document.querySelector('ul.todo-list');
 
   var deleteTaskButtons = document.querySelector('button.destroy');
+  //
 
   // deleteTask.addEventListener('mouseover', function(){
   // 	console.log("hello");
@@ -80,12 +85,12 @@
 
 
 
-//  Potentially something to delete a task
-  // _.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons) {
+  //  Potentially something to delete a task
+  // _.forEach(list, function(element, index, deleteTaskButtons) {
   //   element.addEventListener('click', function() {
-  //     var listItem = document.getElementsByClassName('destroy');
-  //     todos.deleteTask(listItem.index('ul.todo-list'), todos.taskList)
-  //
+  //if (event.target.tagNAme == "BUTTON" && event.target.className == "DESTROY"){
+  //console.log('delete me', event.target);
+  //}
   //     console.log("works");
   //   });
   //
