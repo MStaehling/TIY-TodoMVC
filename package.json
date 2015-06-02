@@ -3,5 +3,9 @@
   "dependencies": {
     "todomvc-app-css": "^2.0.0",
     "todomvc-common": "^1.0.0"
+  },
+  "scripts": {
+    "test": "browser-sync start --server --files='js/**/*.js,test/spec/**/*.js' --startPath test/index.html",
+    "start": "browser-sync start --server"
   }
 }
